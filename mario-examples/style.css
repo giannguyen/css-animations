@@ -41,13 +41,65 @@ html, body{
 
 /*// ELEMENTS TO ANIMATE //*/
 
+.mario{
+  position: absolute;
+  top: -60px;
+  left: 0;
+  animation: drive 4s both infinite linear, 
+              jump 1s 2s ease;
+}
 
+.luigi{
+  position: absolute;
+  top: 30px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.cloud{
+  position: absolute;
+}
+
+.cloud:nth-child(1){
+  top: 120px;
+  width: 200px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+  top: 0;
+  width: 300px;
+  animation: wind 50s linear infinite reverse;
+}
 
 /*// KEYFRAMES //*/
 
 
+@keyframes drive {
+  from{
+    transform: translateX(-200px);
+  }
+  to{
+    transform: translateX(1500px);
+  }
+}
 
+@keyframes wind{
+  from{
+    left: -200px;
+  }
+  to{
+    left: 100%;
+  }
+}
 
-
-
+@keyframes jump{
+  0%{top: -60px;}
+  50%{top: -220px;}
+  100%{top: -60px;}
+}
 
